@@ -3,10 +3,14 @@ import UIKit
 
 final class MainViewController: UIViewController {
     private let viewModel: MainViewModel
+    private let coreDataManager: CoreDataManager
     private var cancellables = Set<AnyCancellable>()
+    private var answer: String = ""
+    private let tempRoom = ChattingRoomDataModel(id: UUID(), created: Date(), chatTitle: "밥 추천좀")
     
-    init(viewModel: MainViewModel) {
+    init(viewModel: MainViewModel, coreDataManager: CoreDataManager) {
         self.viewModel = viewModel
+        self.coreDataManager = coreDataManager
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -19,6 +23,15 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         bindViewModel()
         sendMessageAsUser()
+       // coreDataManager.deleteAllData()
+        let chatRoomList = coreDataManager.readChatRoomData()
+        for chatRoom in chatRoomList {
+            print("ChattingRoom ID: \(chatRoom.id), Created: \(chatRoom.created), Title: \(chatRoom.chatTitle)")
+                let chatting = coreDataManager.readChatMessage(for: chatRoom.id)
+                for chat in chatting {
+                    print("Message ID: \(chat.id), MessageType: \(chat.messageType), Content: \(chat.content)")
+                }
+        }
     }
     
     private func bindViewModel() {
@@ -36,8 +49,12 @@ final class MainViewController: UIViewController {
     }
     
     private func sendMessageAsUser() {
-        let question = "내일 추울까?"
+        let question = "밥 추천좀"
         viewModel.sendMessage(content: question)
+        
+        let chatRoomData = self.tempRoom
+        let chatData = ChatDataModel(id: UUID(), content: question, messageType: .question)
+        coreDataManager.createChatData(chatRoomData: chatRoomData, chatData: chatData)
     }
     
     private func handleChatCompletion(_ chatCompletion: ChatCompletion?) {
@@ -46,6 +63,9 @@ final class MainViewController: UIViewController {
             let content = message.content
         else { return }
         print("\(message.role): \(content)")
+        let chatData = ChatDataModel(id: UUID(), content: content, messageType: .answer)
+        coreDataManager.createChatData(chatRoomData: self.tempRoom, chatData: chatData)
+        print("\(chatData)")
     }
     
     private func handleError(message: String?) {
@@ -54,4 +74,3 @@ final class MainViewController: UIViewController {
         }
     }
 }
-
