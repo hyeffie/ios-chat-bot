@@ -16,7 +16,7 @@ final class OpenAIChatRequestBodyDTOTests: XCTestCase {
     
     func test_주어진_데이터가_DTO에_정의된_속성들의_JSON으로_encoding될_때_데이터가_비어있지_않아야한다() throws {
         // given
-        let messages = [OpenAI.Chat.RequestBodyDTO.Message(role: "yuni", content: "Hello")]
+        let messages = [OpenAI.Chat.RequestBodyDTO.Message(role: OpenAI.Chat.RequestBodyDTO.Message.Role.user, content: "Hello")]
         let expectedDTO = OpenAI.Chat.RequestBodyDTO(messages: messages)
         
         // when
@@ -28,7 +28,7 @@ final class OpenAIChatRequestBodyDTOTests: XCTestCase {
     
     func test_주어진_데이터와_encoding된_RequestBodyDTO의_데이터가_일치_한다() throws {
         // given
-        let messages = [OpenAI.Chat.RequestBodyDTO.Message(role: "yuni", content: "Hello")]
+        let messages = [OpenAI.Chat.RequestBodyDTO.Message(role: OpenAI.Chat.RequestBodyDTO.Message.Role.user, content: "Hello")]
         let expectedDTO = OpenAI.Chat.RequestBodyDTO(messages: messages)
         
         // when
