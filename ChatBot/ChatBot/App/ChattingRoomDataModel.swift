@@ -1,8 +1,13 @@
-//
-//  ChattingRoomDataModel.swift
-//  ChatBot
-//
-//  Created by 윤진영 on 4/12/24.
-//
-
 import Foundation
+
+struct ChattingRoomDataModel: Identifiable {
+    let id: UUID
+    let created: Date
+    let chatTitle: String
+    
+    init(id: UUID, created: Date, chatTitle: String) {
+        self.id = id
+        self.created = created
+        self.chatTitle = chatTitle
+    }
+}
