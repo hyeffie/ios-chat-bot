@@ -12,8 +12,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         let requester = URLSession.shared
         let networkManager = NetworkService(requester: requester)
+        let coreDataManager = CoreDataManager()
         let viewModel = MainViewModel(networkService: networkManager)
-        window?.rootViewController = MainViewController(viewModel: viewModel)
+        window?.rootViewController = MainViewController(viewModel: viewModel, coreDataManager: coreDataManager)
         window?.makeKeyAndVisible()
     }
 }

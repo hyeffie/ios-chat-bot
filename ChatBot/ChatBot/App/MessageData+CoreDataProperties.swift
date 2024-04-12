@@ -1,11 +1,3 @@
-//
-//  MessageData+CoreDataProperties.swift
-//  ChatBot
-//
-//  Created by 윤진영 on 4/11/24.
-//
-//
-
 import Foundation
 import CoreData
 
@@ -16,10 +8,11 @@ extension MessageData {
         return NSFetchRequest<MessageData>(entityName: "MessageData")
     }
 
-    @NSManaged public var id: UUID?
+    @NSManaged public var chatRoomId: UUID?
     @NSManaged public var content: String?
     @NSManaged public var messageType: String?
-    @NSManaged public var message: ChatRoom?
+    @NSManaged public var created: Date?
+    @NSManaged public var message: Set<ChatRoom>?
 
 }
 
