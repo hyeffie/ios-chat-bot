@@ -5,8 +5,7 @@ final class MainViewController: UIViewController {
     private let viewModel: MainViewModel
     private let coreDataManager: CoreDataManager
     private var cancellables = Set<AnyCancellable>()
-    private var answer: String = ""
-    private let tempRoom = ChattingRoomDataModel(id: UUID(), created: Date(), chatTitle: "밥 추천좀")
+    private let tempRoom = ChattingRoomDataModel(id: UUID(), created: Date(), chatTitle: "흠")
     
     init(viewModel: MainViewModel, coreDataManager: CoreDataManager) {
         self.viewModel = viewModel
@@ -23,7 +22,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         bindViewModel()
         sendMessageAsUser()
-       // coreDataManager.deleteAllData()
+  //      coreDataManager.deleteAllData()
         let chatRoomList = coreDataManager.readChatRoomData()
         for chatRoom in chatRoomList {
             print("ChattingRoom ID: \(chatRoom.id), Created: \(chatRoom.created), Title: \(chatRoom.chatTitle)")
@@ -49,7 +48,7 @@ final class MainViewController: UIViewController {
     }
     
     private func sendMessageAsUser() {
-        let question = "밥 추천좀"
+        let question = "흠"
         viewModel.sendMessage(content: question)
         
         let chatRoomData = self.tempRoom
@@ -64,7 +63,7 @@ final class MainViewController: UIViewController {
         else { return }
         print("\(message.role): \(content)")
         let chatData = ChatDataModel(id: UUID(), content: content, messageType: .answer)
-        coreDataManager.createChatData(chatRoomData: self.tempRoom, chatData: chatData)
+        coreDataManager.createChatData(chatRoomData: nil, chatData: chatData)
         print("\(chatData)")
     }
     

@@ -17,13 +17,13 @@
 		999BAB932BBD0F0E00FA2B89 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BAB922BBD0F0E00FA2B89 /* MainViewModel.swift */; };
 		999BAB952BBD358C00FA2B89 /* HTTPRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BAB942BBD358B00FA2B89 /* HTTPRequestable.swift */; };
 		999BAC842BC830F000FA2B89 /* ChatBotCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 999BAC822BC830F000FA2B89 /* ChatBotCoreData.xcdatamodeld */; };
-		999BAC992BC8322200FA2B89 /* ChatRoom+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BAC952BC8322200FA2B89 /* ChatRoom+CoreDataClass.swift */; };
-		999BAC9A2BC8322200FA2B89 /* ChatRoom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BAC962BC8322200FA2B89 /* ChatRoom+CoreDataProperties.swift */; };
-		999BAC9B2BC8322200FA2B89 /* MessageData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BAC972BC8322200FA2B89 /* MessageData+CoreDataClass.swift */; };
-		999BAC9C2BC8322200FA2B89 /* MessageData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BAC982BC8322200FA2B89 /* MessageData+CoreDataProperties.swift */; };
 		999BAC9E2BC8324C00FA2B89 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BAC9D2BC8324C00FA2B89 /* CoreDataManager.swift */; };
 		999BACA02BC845B800FA2B89 /* ChatDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BAC9F2BC845B800FA2B89 /* ChatDataModel.swift */; };
 		999BACA22BC845CE00FA2B89 /* ChattingRoomDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BACA12BC845CE00FA2B89 /* ChattingRoomDataModel.swift */; };
+		999BACA72BC8F9F800FA2B89 /* ChatRoom+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BACA32BC8F9F800FA2B89 /* ChatRoom+CoreDataClass.swift */; };
+		999BACA82BC8F9F800FA2B89 /* ChatRoom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BACA42BC8F9F800FA2B89 /* ChatRoom+CoreDataProperties.swift */; };
+		999BACA92BC8F9F800FA2B89 /* MessageData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BACA52BC8F9F800FA2B89 /* MessageData+CoreDataClass.swift */; };
+		999BACAA2BC8F9F800FA2B89 /* MessageData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BACA62BC8F9F800FA2B89 /* MessageData+CoreDataProperties.swift */; };
 		B4B3E2BD2B42D1BB00818B3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B3E2BC2B42D1BB00818B3C /* AppDelegate.swift */; };
 		B4B3E2BF2B42D1BB00818B3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B3E2BE2B42D1BB00818B3C /* SceneDelegate.swift */; };
 		B4B3E2C12B42D1BB00818B3C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B3E2C02B42D1BB00818B3C /* MainViewController.swift */; };
@@ -61,13 +61,13 @@
 		999BAB922BBD0F0E00FA2B89 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		999BAB942BBD358B00FA2B89 /* HTTPRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestable.swift; sourceTree = "<group>"; };
 		999BAC832BC830F000FA2B89 /* ChatBotCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatBotCoreData.xcdatamodel; sourceTree = "<group>"; };
-		999BAC952BC8322200FA2B89 /* ChatRoom+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChatRoom+CoreDataClass.swift"; path = "ChatBot/App/ChatRoom+CoreDataClass.swift"; sourceTree = "<group>"; };
-		999BAC962BC8322200FA2B89 /* ChatRoom+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChatRoom+CoreDataProperties.swift"; path = "ChatBot/App/ChatRoom+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		999BAC972BC8322200FA2B89 /* MessageData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MessageData+CoreDataClass.swift"; path = "ChatBot/App/MessageData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		999BAC982BC8322200FA2B89 /* MessageData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MessageData+CoreDataProperties.swift"; path = "ChatBot/App/MessageData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		999BAC9D2BC8324C00FA2B89 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		999BAC9F2BC845B800FA2B89 /* ChatDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataModel.swift; sourceTree = "<group>"; };
 		999BACA12BC845CE00FA2B89 /* ChattingRoomDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomDataModel.swift; sourceTree = "<group>"; };
+		999BACA32BC8F9F800FA2B89 /* ChatRoom+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChatRoom+CoreDataClass.swift"; path = "ChatBot/App/ChatRoom+CoreDataClass.swift"; sourceTree = "<group>"; };
+		999BACA42BC8F9F800FA2B89 /* ChatRoom+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChatRoom+CoreDataProperties.swift"; path = "ChatBot/App/ChatRoom+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		999BACA52BC8F9F800FA2B89 /* MessageData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MessageData+CoreDataClass.swift"; path = "ChatBot/App/MessageData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		999BACA62BC8F9F800FA2B89 /* MessageData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MessageData+CoreDataProperties.swift"; path = "ChatBot/App/MessageData+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B4B3E2B92B42D1BB00818B3C /* ChatBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B3E2BC2B42D1BB00818B3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4B3E2BE2B42D1BB00818B3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,10 +111,10 @@
 		B4B3E2B02B42D1BB00818B3C = {
 			isa = PBXGroup;
 			children = (
-				999BAC952BC8322200FA2B89 /* ChatRoom+CoreDataClass.swift */,
-				999BAC962BC8322200FA2B89 /* ChatRoom+CoreDataProperties.swift */,
-				999BAC972BC8322200FA2B89 /* MessageData+CoreDataClass.swift */,
-				999BAC982BC8322200FA2B89 /* MessageData+CoreDataProperties.swift */,
+				999BACA32BC8F9F800FA2B89 /* ChatRoom+CoreDataClass.swift */,
+				999BACA42BC8F9F800FA2B89 /* ChatRoom+CoreDataProperties.swift */,
+				999BACA52BC8F9F800FA2B89 /* MessageData+CoreDataClass.swift */,
+				999BACA62BC8F9F800FA2B89 /* MessageData+CoreDataProperties.swift */,
 				F428B1B92BB433EC00ED811F /* Secrets.xcconfig */,
 				B4B3E2BB2B42D1BB00818B3C /* ChatBot */,
 				F428B1C12BB52D1E00ED811F /* ChatBotTests */,
@@ -389,24 +389,24 @@
 				999BAC842BC830F000FA2B89 /* ChatBotCoreData.xcdatamodeld in Sources */,
 				B4B3E2C12B42D1BB00818B3C /* MainViewController.swift in Sources */,
 				999BAB8D2BBCF4CC00FA2B89 /* OpenAIRequest.swift in Sources */,
+				999BACA82BC8F9F800FA2B89 /* ChatRoom+CoreDataProperties.swift in Sources */,
 				999BAB332BB50A4F00FA2B89 /* RequestBodyDTO.swift in Sources */,
+				999BACA92BC8F9F800FA2B89 /* MessageData+CoreDataClass.swift in Sources */,
 				F4FEE3212BBE98B800E61FF3 /* HTTPRequestMethod.swift in Sources */,
-				999BAC9C2BC8322200FA2B89 /* MessageData+CoreDataProperties.swift in Sources */,
-				999BAC9B2BC8322200FA2B89 /* MessageData+CoreDataClass.swift in Sources */,
 				B4B3E2BD2B42D1BB00818B3C /* AppDelegate.swift in Sources */,
 				999BAC9E2BC8324C00FA2B89 /* CoreDataManager.swift in Sources */,
 				999BACA02BC845B800FA2B89 /* ChatDataModel.swift in Sources */,
-				999BAC992BC8322200FA2B89 /* ChatRoom+CoreDataClass.swift in Sources */,
 				999BAB8F2BBCF6C700FA2B89 /* NetworkService.swift in Sources */,
 				999BAB952BBD358C00FA2B89 /* HTTPRequestable.swift in Sources */,
 				999BACA22BC845CE00FA2B89 /* ChattingRoomDataModel.swift in Sources */,
 				999BAB8B2BBCF45E00FA2B89 /* APIKeyLoader.swift in Sources */,
 				F428B1BB2BB5036500ED811F /* ResponseDTO.swift in Sources */,
 				F4A0E9452BBFDE790024097E /* ChatCompletion.swift in Sources */,
-				999BAC9A2BC8322200FA2B89 /* ChatRoom+CoreDataProperties.swift in Sources */,
+				999BACA72BC8F9F800FA2B89 /* ChatRoom+CoreDataClass.swift in Sources */,
 				999BAB932BBD0F0E00FA2B89 /* MainViewModel.swift in Sources */,
 				F4A0E94A2BC009C80024097E /* URLSession+.swift in Sources */,
 				F4FEE31D2BBE984B00E61FF3 /* NetworkError.swift in Sources */,
+				999BACAA2BC8F9F800FA2B89 /* MessageData+CoreDataProperties.swift in Sources */,
 				F4FEE32A2BBEC8BD00E61FF3 /* HTTPRequestHeader.swift in Sources */,
 				F4FEE31F2BBE98A900E61FF3 /* URLScheme.swift in Sources */,
 				F4FEE32C2BBECEDA00E61FF3 /* NetworkRequestable.swift in Sources */,

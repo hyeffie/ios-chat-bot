@@ -10,9 +10,9 @@ extension MessageData {
 
     @NSManaged public var chatRoomId: UUID?
     @NSManaged public var content: String?
-    @NSManaged public var messageType: String?
     @NSManaged public var created: Date?
-    @NSManaged public var message: Set<ChatRoom>?
+    @NSManaged public var messageType: String?
+    @NSManaged public var chattingRoom: ChatRoom?
 
 }
 

@@ -4,13 +4,17 @@
         <attribute name="chatTitle" optional="YES" attributeType="String"/>
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MessageData" inverseName="message" inverseEntity="MessageData"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MessageData" inverseName="chattingRoom" inverseEntity="MessageData"/>
     </entity>
     <entity name="MessageData" representedClassName="MessageData" syncable="YES">
         <attribute name="chatRoomId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="messageType" optional="YES" attributeType="String"/>
-        <relationship name="message" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ChatRoom" inverseName="messages" inverseEntity="ChatRoom"/>
+        <relationship name="chattingRoom" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ChatRoom" inverseName="messages" inverseEntity="ChatRoom">
+            <userInfo>
+                <entry key="key" value="value"/>
+            </userInfo>
+        </relationship>
     </entity>
 </model>

@@ -8,9 +8,9 @@ extension ChatRoom {
         return NSFetchRequest<ChatRoom>(entityName: "ChatRoom")
     }
 
-    @NSManaged public var id: UUID?
-    @NSManaged public var created: Date?
     @NSManaged public var chatTitle: String?
+    @NSManaged public var created: Date?
+    @NSManaged public var id: UUID?
     @NSManaged public var messages: NSSet?
 
 }
