@@ -7,18 +7,36 @@ final class CoreDataManager {
     
     lazy var context = AppDelegate().persistentContainer.viewContext
     
-    func createChatData(chatRoomData: ChattingRoomDataModel?, chatData: ChatDataModel) {
-        let chatData = MessageData(context: context)
-        chatData.chatRoomId = chatData.chatRoomId
-        chatData.content = chatData.content
-        chatData.messageType = chatData.messageType
-        chatData.created = chatData.created
+    func createChatData(chatRoomID: UUID?, chatData: ChatDataModel) {
+        let newMessage = MessageData(context: context)
+        newMessage.content = newMessage.content
+        newMessage.messageType = newMessage.messageType
+        newMessage.created = newMessage.created
         
-        let chatRoom = ChatRoom(context: context)
-        chatRoom.id = chatRoomData?.id
-        chatRoom.created = chatRoomData?.created
-        chatRoom.chatTitle = chatRoomData?.chatTitle
-        chatRoom.created = chatRoomData?.created
+        if let chatRoomID {
+            // 기존 채팅방에 추가
+            let roomRequest = ChatRoom.fetchRequest()
+            roomRequest.predicate = .init(
+                format: "%K == %@",
+                #keyPath(ChatRoom.roomID), chatRoomID as CVarArg
+            )
+            guard
+                let results = try? context.fetch(roomRequest),
+                let targetRoom = results.first(where: { room in room.roomID == chatRoomID })
+            else {
+                // 새 방 만들기
+                return
+            }
+            newMessage.chattingRoom = targetRoom
+            targetRoom.addToMessages(newMessage)
+        } else {
+            // 새 채팅방 만들고 추가
+            let chatRoom = ChatRoom(context: context)
+            chatRoom.roomID = UUID()
+            chatRoom.created = Date()
+            chatRoom.chatTitle = newMessage.content
+            newMessage.chattingRoom = chatRoom
+        }
         
         do {
             try context.save()
@@ -32,11 +50,7 @@ final class CoreDataManager {
         request.predicate = NSPredicate(format: "chatRoomId == %@", chatRoomId as CVarArg)
         do {
             let chatDataList = try context.fetch(request)
-            return chatDataList.map { chatData in
-                return ChatDataModel(id: chatData.chatRoomId ?? UUID(),
-                                     content: chatData.content ?? "",
-                                     messageType: MessageType(rawValue: chatData.messageType ?? "") ?? .question)
-            }
+            return chatDataList.compactMap { $0.toDomain() }
         } catch {
             print(error.localizedDescription)
             return []
@@ -47,17 +61,13 @@ final class CoreDataManager {
         let request: NSFetchRequest<ChatRoom> = ChatRoom.fetchRequest()
         do {
             let chatRoomList = try context.fetch(request)
-            return chatRoomList.compactMap { chatRoom in
-                guard let id = chatRoom.id,
-                      let created = chatRoom.created,
-                      let chatTitle = chatRoom.chatTitle else { return nil }
-                return ChattingRoomDataModel(id: id, created: created, chatTitle: chatTitle)
-            }
+            return chatRoomList.compactMap { $0.toDomin() }
         } catch {
             print(error.localizedDescription)
             return []
         }
     }
+    
     func updateChatData(id: UUID, newChatTitle: String) {
         let request: NSFetchRequest<ChatRoom> = ChatRoom.fetchRequest()
         request.predicate = NSPredicate(format: "id == %@", id as CVarArg)

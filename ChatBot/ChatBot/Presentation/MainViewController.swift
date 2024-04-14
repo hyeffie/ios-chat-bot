@@ -5,7 +5,7 @@ final class MainViewController: UIViewController {
     private let viewModel: MainViewModel
     private let coreDataManager: CoreDataManager
     private var cancellables = Set<AnyCancellable>()
-    private let tempRoom = ChattingRoomDataModel(id: UUID(), created: Date(), chatTitle: "흠")
+    private let tempRoomID = UUID()
     
     init(viewModel: MainViewModel, coreDataManager: CoreDataManager) {
         self.viewModel = viewModel
@@ -22,7 +22,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         bindViewModel()
         sendMessageAsUser()
-  //      coreDataManager.deleteAllData()
+//        coreDataManager.deleteAllData()
         let chatRoomList = coreDataManager.readChatRoomData()
         for chatRoom in chatRoomList {
             print("ChattingRoom ID: \(chatRoom.id), Created: \(chatRoom.created), Title: \(chatRoom.chatTitle)")
@@ -50,10 +50,8 @@ final class MainViewController: UIViewController {
     private func sendMessageAsUser() {
         let question = "흠"
         viewModel.sendMessage(content: question)
-        
-        let chatRoomData = self.tempRoom
-        let chatData = ChatDataModel(id: UUID(), content: question, messageType: .question)
-        coreDataManager.createChatData(chatRoomData: chatRoomData, chatData: chatData)
+        let chatData = ChatDataModel(roomID: UUID(), content: question, messageType: .question)
+        coreDataManager.createChatData(chatRoomID: self.tempRoomID, chatData: chatData)
     }
     
     private func handleChatCompletion(_ chatCompletion: ChatCompletion?) {
@@ -62,8 +60,8 @@ final class MainViewController: UIViewController {
             let content = message.content
         else { return }
         print("\(message.role): \(content)")
-        let chatData = ChatDataModel(id: UUID(), content: content, messageType: .answer)
-        coreDataManager.createChatData(chatRoomData: nil, chatData: chatData)
+        let chatData = ChatDataModel(roomID: UUID(), content: content, messageType: .answer)
+        coreDataManager.createChatData(chatRoomID: self.tempRoomID, chatData: chatData)
         print("\(chatData)")
     }
     

@@ -10,7 +10,7 @@ extension ChatRoom {
 
     @NSManaged public var chatTitle: String?
     @NSManaged public var created: Date?
-    @NSManaged public var id: UUID?
+    @NSManaged public var roomID: UUID?
     @NSManaged public var messages: NSSet?
 
 }
@@ -34,4 +34,18 @@ extension ChatRoom {
 
 extension ChatRoom : Identifiable {
 
+}
+
+extension ChatRoom {
+    func toDomin() -> ChattingRoomDataModel? {
+        guard let id = self.roomID,
+              let created = self.created,
+              let chatTitle = self.chatTitle
+        else { return nil }
+        return ChattingRoomDataModel(
+            id: id,
+            created: created,
+            chatTitle: chatTitle
+        )
+    }
 }
