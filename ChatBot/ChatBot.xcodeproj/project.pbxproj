@@ -33,6 +33,8 @@
 		F448A9E62BCB90BE00A3E2E5 /* ChatRoom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448A9E22BCB90BE00A3E2E5 /* ChatRoom+CoreDataProperties.swift */; };
 		F448A9E72BCB90BE00A3E2E5 /* MessageData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448A9E32BCB90BE00A3E2E5 /* MessageData+CoreDataClass.swift */; };
 		F448A9E82BCB90BE00A3E2E5 /* MessageData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448A9E42BCB90BE00A3E2E5 /* MessageData+CoreDataProperties.swift */; };
+		F448A9EB2BCB96A700A3E2E5 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448A9EA2BCB96A700A3E2E5 /* Repository.swift */; };
+		F448A9EE2BCB982700A3E2E5 /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448A9ED2BCB982700A3E2E5 /* PersistentStore.swift */; };
 		F4A0E9452BBFDE790024097E /* ChatCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0E9442BBFDE790024097E /* ChatCompletion.swift */; };
 		F4A0E94A2BC009C80024097E /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0E9492BC009C80024097E /* URLSession+.swift */; };
 		F4FEE31D2BBE984B00E61FF3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FEE31C2BBE984B00E61FF3 /* NetworkError.swift */; };
@@ -81,6 +83,8 @@
 		F448A9E22BCB90BE00A3E2E5 /* ChatRoom+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatRoom+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F448A9E32BCB90BE00A3E2E5 /* MessageData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F448A9E42BCB90BE00A3E2E5 /* MessageData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F448A9EA2BCB96A700A3E2E5 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		F448A9ED2BCB982700A3E2E5 /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 		F4A0E9442BBFDE790024097E /* ChatCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletion.swift; sourceTree = "<group>"; };
 		F4A0E9492BC009C80024097E /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
 		F4FEE31C2BBE984B00E61FF3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 				F4005CF92BC8FF0000A22099 /* Persistent */,
 				F448A9E92BCB92BE00A3E2E5 /* Domain */,
 				F4FEE3262BBE9B4800E61FF3 /* Presentation */,
+				F448A9EC2BCB981E00A3E2E5 /* Data */,
 			);
 			path = ChatBot;
 			sourceTree = "<group>";
@@ -194,6 +199,15 @@
 				F4A0E9462BBFDE8F0024097E /* Entity */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		F448A9EC2BCB981E00A3E2E5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F448A9ED2BCB982700A3E2E5 /* PersistentStore.swift */,
+				F448A9EA2BCB96A700A3E2E5 /* Repository.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		F4A0E9462BBFDE8F0024097E /* Entity */ = {
@@ -421,10 +435,12 @@
 				999BAC842BC830F000FA2B89 /* ChatBotCoreData.xcdatamodeld in Sources */,
 				B4B3E2C12B42D1BB00818B3C /* MainViewController.swift in Sources */,
 				999BAB8D2BBCF4CC00FA2B89 /* OpenAIRequest.swift in Sources */,
+				F448A9EB2BCB96A700A3E2E5 /* Repository.swift in Sources */,
 				999BAB332BB50A4F00FA2B89 /* RequestBodyDTO.swift in Sources */,
 				F4FEE3212BBE98B800E61FF3 /* HTTPRequestMethod.swift in Sources */,
 				B4B3E2BD2B42D1BB00818B3C /* AppDelegate.swift in Sources */,
 				999BAC9E2BC8324C00FA2B89 /* CoreDataManager.swift in Sources */,
+				F448A9EE2BCB982700A3E2E5 /* PersistentStore.swift in Sources */,
 				999BACA02BC845B800FA2B89 /* ChatDataModel.swift in Sources */,
 				999BAB8F2BBCF6C700FA2B89 /* NetworkService.swift in Sources */,
 				999BAB952BBD358C00FA2B89 /* HTTPRequestable.swift in Sources */,

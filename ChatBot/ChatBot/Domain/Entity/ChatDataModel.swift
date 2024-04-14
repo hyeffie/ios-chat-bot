@@ -3,6 +3,13 @@ import Foundation
 enum MessageType: String {
     case question
     case answer
+    
+    var role: String {
+        switch self {
+        case .answer: return "assistant"
+        case .question: return "user"
+        }
+    }
 }
 
 struct ChatDataModel: Identifiable {

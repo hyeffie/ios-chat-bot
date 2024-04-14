@@ -9,9 +9,9 @@ final class CoreDataManager {
     
     func createChatData(chatRoomID: UUID?, chatData: ChatDataModel) {
         let newMessage = MessageData(context: context)
-        newMessage.content = newMessage.content
-        newMessage.messageType = newMessage.messageType
-        newMessage.created = newMessage.created
+        newMessage.content = chatData.content
+        newMessage.messageType = chatData.messageType.role
+        newMessage.created = Date()
         
         if let chatRoomID {
             // 기존 채팅방에 추가
@@ -105,3 +105,7 @@ final class CoreDataManager {
         }
     }
 }
+
+//extension CoreDataManager: PersistentStore {
+//    
+//}
